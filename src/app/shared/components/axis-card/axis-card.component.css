@@ -1,0 +1,142 @@
+.axis-card {
+  display: grid;
+  gap: 1rem;
+  min-height: 100%;
+  padding: 1.35rem 1.35rem 1.45rem;
+  background: rgba(255, 251, 244, 0.82);
+  border: 1px solid var(--line-strong);
+  position: relative;
+  overflow: hidden;
+  transition:
+    transform 240ms ease,
+    border-color 240ms ease,
+    background-color 240ms ease,
+    box-shadow 240ms ease;
+}
+
+.axis-card::before {
+  content: '';
+  position: absolute;
+  inset: 0 auto 0 0;
+  width: 5px;
+  background: var(--axis-accent);
+}
+
+.axis-card::after {
+  content: '';
+  position: absolute;
+  left: 1.35rem;
+  right: 1.35rem;
+  bottom: 1.15rem;
+  height: 1px;
+  background: var(--line);
+}
+
+.axis-card:hover {
+  transform: translateY(-4px);
+  background: rgba(255, 251, 244, 0.92);
+  border-color: rgba(24, 20, 16, 0.22);
+  box-shadow: 0 20px 40px -34px rgba(24, 20, 16, 0.35);
+}
+
+.axis-card__top {
+  display: flex;
+  justify-content: space-between;
+  gap: 0.8rem;
+  align-items: center;
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.axis-card__index {
+  color: var(--axis-accent);
+  font-weight: 600;
+}
+
+.axis-card__count {
+  color: var(--muted);
+}
+
+.axis-card__head {
+  display: grid;
+  gap: 0.35rem;
+}
+
+.axis-card__subtitle {
+  margin: 0;
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--muted);
+}
+
+h3 {
+  margin: 0;
+  max-width: 8ch;
+  font-family: var(--font-display);
+  font-size: clamp(2rem, 2.8vw, 2.7rem);
+  line-height: 0.94;
+  letter-spacing: -0.05em;
+  color: var(--ink);
+}
+
+.axis-card__description,
+ul {
+  margin: 0;
+  color: var(--muted);
+  line-height: 1.65;
+}
+
+ul {
+  list-style: none;
+  display: grid;
+  gap: 0.55rem;
+  padding: 0;
+}
+
+li {
+  position: relative;
+  padding-left: 1rem;
+}
+
+li::before {
+  content: '+';
+  position: absolute;
+  left: 0;
+  color: var(--axis-accent);
+  font-weight: 700;
+}
+
+.axis-card__link {
+  display: flex;
+  justify-content: space-between;
+  align-items: end;
+  gap: 1rem;
+  margin-top: auto;
+  padding-top: 0.85rem;
+  color: var(--ink);
+  text-decoration: none;
+  border-top: 1px solid var(--line);
+  position: relative;
+  z-index: 1;
+  transition: gap 220ms ease, color 220ms ease;
+}
+
+.axis-card__link strong {
+  font-size: 0.95rem;
+}
+
+.axis-card__link span {
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--muted);
+}
+
+.axis-card:hover .axis-card__link {
+  gap: 1.25rem;
+}

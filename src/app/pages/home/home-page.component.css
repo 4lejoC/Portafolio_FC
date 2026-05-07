@@ -1,0 +1,105 @@
+:host {
+  display: block;
+}
+
+.page-shell {
+  width: min(1260px, calc(100% - 2.2rem));
+  margin: 0 auto;
+  padding-bottom: 4rem;
+}
+
+.overview {
+  padding: 2rem 0 0;
+  border-top: 1px solid var(--line-strong);
+}
+
+.overview-heading {
+  max-width: 56rem;
+  opacity: 0;
+  animation: rise-in 700ms cubic-bezier(0.2, 0.8, 0.2, 1) 220ms both;
+}
+
+.eyebrow {
+  margin: 0;
+  font-family: var(--font-mono);
+  font-size: 0.74rem;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--copper);
+}
+
+h2 {
+  margin: 0.75rem 0 0;
+  max-width: 12ch;
+  font-family: var(--font-display);
+  font-size: clamp(2.4rem, 4.2vw, 4.3rem);
+  line-height: 0.92;
+  letter-spacing: -0.05em;
+  color: var(--ink);
+}
+
+.overview-heading p:last-child {
+  margin: 1rem 0 0;
+  max-width: 48rem;
+  color: var(--muted);
+  line-height: 1.75;
+}
+
+.overview-grid {
+  display: grid;
+  grid-template-columns: repeat(6, minmax(0, 1fr));
+  gap: 1.2rem;
+  margin-top: 1.8rem;
+}
+
+.overview-grid app-axis-card {
+  display: block;
+  grid-column: span 2;
+  opacity: 0;
+  animation: rise-in 720ms cubic-bezier(0.2, 0.8, 0.2, 1) both;
+}
+
+.overview-grid app-axis-card:nth-child(-n + 2) {
+  grid-column: span 3;
+}
+
+.overview-grid app-axis-card:nth-child(1) {
+  animation-delay: 260ms;
+}
+
+.overview-grid app-axis-card:nth-child(2) {
+  animation-delay: 360ms;
+}
+
+.overview-grid app-axis-card:nth-child(3) {
+  animation-delay: 460ms;
+}
+
+.overview-grid app-axis-card:nth-child(4) {
+  animation-delay: 560ms;
+}
+
+.overview-grid app-axis-card:nth-child(5) {
+  animation-delay: 660ms;
+}
+
+@media (max-width: 1080px) {
+  .page-shell {
+    width: min(1260px, calc(100% - 1.4rem));
+  }
+
+  .overview-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .overview-grid app-axis-card,
+  .overview-grid app-axis-card:nth-child(-n + 2) {
+    grid-column: span 1;
+  }
+}
+
+@media (max-width: 720px) {
+  .overview-grid {
+    grid-template-columns: 1fr;
+  }
+}

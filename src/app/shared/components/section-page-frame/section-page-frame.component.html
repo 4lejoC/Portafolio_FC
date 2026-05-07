@@ -1,0 +1,60 @@
+<app-site-header [pageTitle]="pageTitle()" [items]="navigationItems()" />
+
+<main class="axis-page-shell">
+  <section class="axis-page-hero">
+    <div class="axis-page-hero__copy" [attr.data-index]="page().index">
+      <div class="axis-page-hero__meta">
+        <a class="back-link" routerLink="/">Volver a portada</a>
+        <span class="chapter-label">Capitulo {{ page().index }}</span>
+      </div>
+
+      <p class="eyebrow">{{ page().subtitle }}</p>
+      <h1>{{ page().title }}</h1>
+      <p class="lead">{{ page().description }}</p>
+    </div>
+
+    <div class="axis-page-hero__panel">
+      <div class="axis-page-hero__facts">
+        <article>
+          <span>capitulo</span>
+          <strong>{{ page().index }}</strong>
+        </article>
+        <article>
+          <span>bloques</span>
+          <strong>{{ page().topics.length }}</strong>
+        </article>
+        <article>
+          <span>marcos</span>
+          <strong>{{ standardCount() }}</strong>
+        </article>
+      </div>
+
+      <div class="axis-page-hero__contents">
+        <p class="axis-page-hero__contents-label">Tabla de lectura</p>
+        <ol>
+          @for (topic of page().topics; track topic.title; let topicIndex = $index) {
+            <li>
+              <span>{{ page().index }}.{{ topicIndex + 1 }}</span>
+              <strong>{{ topic.title }}</strong>
+            </li>
+          }
+        </ol>
+      </div>
+    </div>
+  </section>
+
+  <app-axis-section [page]="page()" />
+
+  <section class="related-axes">
+    <div class="related-axes__heading">
+      <p class="eyebrow">Otros capitulos</p>
+      <h2>Continua la lectura del dossier</h2>
+    </div>
+
+    <div class="related-axes__grid">
+      @for (item of relatedItems(); track item.id) {
+        <app-axis-card [item]="item" />
+      }
+    </div>
+  </section>
+</main>

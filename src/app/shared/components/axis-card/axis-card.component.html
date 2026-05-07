@@ -1,0 +1,24 @@
+<article class="axis-card" [style.--axis-accent]="item().accent">
+  <div class="axis-card__top">
+    <span class="axis-card__index">Capitulo {{ item().index }}</span>
+    <span class="axis-card__count">{{ item().topicCount }} bloques</span>
+  </div>
+
+  <div class="axis-card__head">
+    <p class="axis-card__subtitle">{{ item().subtitle }}</p>
+    <h3>{{ item().title }}</h3>
+  </div>
+
+  <p class="axis-card__description">{{ item().description }}</p>
+
+  <ul>
+    @for (outcome of item().outcomes; track outcome) {
+      <li>{{ outcome }}</li>
+    }
+  </ul>
+
+  <a class="axis-card__link" [routerLink]="item().route">
+    <strong>Abrir capitulo</strong>
+    <span>lectura detallada</span>
+  </a>
+</article>

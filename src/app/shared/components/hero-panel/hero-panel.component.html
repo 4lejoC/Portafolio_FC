@@ -1,0 +1,39 @@
+<section class="hero" id="inicio">
+  <div class="hero-copy">
+    <div class="hero-copy__meta">
+      <p class="eyebrow">{{ kicker() }}</p>
+      <p class="hero-edition">Capitulo 00 / Portada</p>
+    </div>
+
+    <div class="hero-copy__body">
+      <h1>{{ title() }}</h1>
+      <p class="subtitle">{{ subtitle() }}</p>
+      <p class="description">{{ description() }}</p>
+    </div>
+
+    <div class="hero-actions">
+      <a class="button button-primary" [routerLink]="featurePath()">Abrir capitulo 01</a>
+      <a class="button button-secondary" href="#ejes">Ver indice completo</a>
+    </div>
+
+    <div class="hero-facts" aria-label="Datos ejecutivos">
+      @for (metric of metrics(); track metric.label; let index = $index) {
+        <article>
+          <span class="hero-facts__index">0{{ index + 1 }}</span>
+          <strong>{{ metric.value }}</strong>
+          <p>{{ metric.label }}</p>
+          <small>{{ metric.note }}</small>
+        </article>
+      }
+    </div>
+
+    <div class="focus-strip" aria-label="Capitulos principales">
+      @for (item of focusAreas(); track item; let index = $index) {
+        <article>
+          <span>0{{ index + 1 }}</span>
+          <strong>{{ item }}</strong>
+        </article>
+      }
+    </div>
+  </div>
+</section>

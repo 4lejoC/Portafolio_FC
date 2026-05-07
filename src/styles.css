@@ -1,3 +1,119 @@
-/* You can add global styles to this file, and also import other style files */
+@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&family=IBM+Plex+Sans:wght@400;500;600;700&family=Space+Grotesk:wght@400;500;700&display=swap');
 
 @import 'tailwindcss';
+
+:root {
+  --font-display: 'Space Grotesk', 'Segoe UI', sans-serif;
+  --font-body: 'IBM Plex Sans', 'Segoe UI', sans-serif;
+  --font-mono: 'IBM Plex Mono', 'Consolas', monospace;
+  --paper: #f6f0e4;
+  --paper-deep: #eadfce;
+  --paper-soft: rgba(255, 251, 244, 0.8);
+  --ink: #181410;
+  --ink-soft: #3f3933;
+  --muted: #655d54;
+  --line: rgba(24, 20, 16, 0.12);
+  --line-strong: rgba(24, 20, 16, 0.24);
+  --teal: #1d5b52;
+  --copper: #a15f34;
+  --navy: #1b2730;
+  color: var(--ink);
+  background:
+    linear-gradient(180deg, rgba(24, 20, 16, 0.03), rgba(24, 20, 16, 0) 18%),
+    radial-gradient(circle at 12% 0%, rgba(29, 91, 82, 0.12), transparent 22%),
+    radial-gradient(circle at 100% 18%, rgba(161, 95, 52, 0.14), transparent 20%),
+    repeating-linear-gradient(
+      90deg,
+      transparent 0,
+      transparent 95px,
+      rgba(24, 20, 16, 0.03) 96px
+    ),
+    linear-gradient(180deg, #f8f3ea 0%, #efe5d6 100%);
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  min-width: 320px;
+  font-family: var(--font-body);
+  background: inherit;
+  color: inherit;
+  position: relative;
+}
+
+body::before {
+  content: '';
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  background:
+    linear-gradient(180deg, rgba(255, 255, 255, 0.18), transparent 22%),
+    linear-gradient(90deg, rgba(255, 255, 255, 0.08), transparent 24%);
+  opacity: 0.75;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+a {
+  color: inherit;
+}
+
+::selection {
+  background: rgba(29, 91, 82, 0.18);
+}
+
+@keyframes rise-in {
+  from {
+    opacity: 0;
+    transform: translateY(18px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fade-in {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes line-drop {
+  from {
+    opacity: 0;
+    transform: scaleY(0.15);
+    transform-origin: top;
+  }
+
+  to {
+    opacity: 1;
+    transform: scaleY(1);
+    transform-origin: top;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    animation: none !important;
+    transition: none !important;
+  }
+}

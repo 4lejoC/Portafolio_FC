@@ -1,0 +1,30 @@
+<app-site-header [pageTitle]="page.title" [items]="navigationItems" />
+
+<main class="page-shell">
+  <app-hero-panel
+    [kicker]="page.kicker"
+    [title]="page.title"
+    [subtitle]="page.subtitle"
+    [description]="page.description"
+    [focusAreas]="page.focusAreas"
+    [metrics]="page.metrics"
+    [featurePath]="navigationItems[0].route"
+  />
+
+  <section class="overview" id="ejes">
+    <div class="overview-heading">
+      <p class="eyebrow">Indice del reporte</p>
+      <h2>Cinco paginas para recorrer el documento</h2>
+      <p>
+        La portada no concentra el detalle tecnico. Cada tarjeta abre una pagina independiente con
+        el contenido real del eje correspondiente.
+      </p>
+    </div>
+
+    <div class="overview-grid">
+      @for (item of navigationItems; track item.id) {
+        <app-axis-card [item]="item" />
+      }
+    </div>
+  </section>
+</main>

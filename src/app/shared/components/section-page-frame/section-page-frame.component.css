@@ -1,0 +1,303 @@
+:host {
+  display: block;
+}
+
+.axis-page-shell {
+  width: min(1260px, calc(100% - 2.2rem));
+  margin: 0 auto;
+  padding: 3.2rem 0 4rem;
+}
+
+.axis-page-hero {
+  display: grid;
+  grid-template-columns: minmax(0, 1.2fr) minmax(320px, 0.88fr);
+  gap: 1.2rem;
+  align-items: stretch;
+  margin-bottom: 2.3rem;
+}
+
+.axis-page-hero__copy,
+.axis-page-hero__panel {
+  border: 1px solid var(--line-strong);
+}
+
+.axis-page-hero__copy {
+  position: relative;
+  overflow: hidden;
+  min-height: 22rem;
+  padding: 1.5rem 1.75rem 2rem;
+  background:
+    linear-gradient(140deg, rgba(161, 95, 52, 0.1), transparent 34%),
+    linear-gradient(180deg, rgba(255, 251, 244, 0.95), rgba(244, 235, 222, 0.9));
+  animation: rise-in 700ms cubic-bezier(0.2, 0.8, 0.2, 1) both;
+}
+
+.axis-page-hero__copy::after {
+  content: attr(data-index);
+  position: absolute;
+  top: 0.8rem;
+  right: 1rem;
+  font-family: var(--font-display);
+  font-size: clamp(6rem, 13vw, 10rem);
+  font-weight: 700;
+  line-height: 1;
+  letter-spacing: -0.08em;
+  color: rgba(24, 20, 16, 0.08);
+  animation: fade-in 880ms ease-out 220ms both;
+}
+
+.axis-page-hero__meta {
+  display: flex;
+  justify-content: space-between;
+  gap: 0.8rem;
+  align-items: center;
+  position: relative;
+  z-index: 1;
+  animation: rise-in 620ms cubic-bezier(0.2, 0.8, 0.2, 1) 100ms both;
+}
+
+.back-link,
+.chapter-label,
+.eyebrow,
+.axis-page-hero__contents-label {
+  font-family: var(--font-mono);
+  font-size: 0.74rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.back-link {
+  display: inline-flex;
+  align-items: center;
+  min-height: 2.8rem;
+  padding: 0 1rem;
+  border: 1px solid var(--line-strong);
+  background: rgba(255, 251, 244, 0.68);
+  color: var(--ink);
+  font-weight: 600;
+  text-decoration: none;
+}
+
+.chapter-label {
+  color: var(--copper);
+}
+
+.eyebrow {
+  margin: 1.4rem 0 0;
+  color: var(--teal);
+  position: relative;
+  z-index: 1;
+  animation: rise-in 620ms cubic-bezier(0.2, 0.8, 0.2, 1) 180ms both;
+}
+
+h1,
+h2 {
+  margin: 0.8rem 0 0;
+  font-family: var(--font-display);
+  line-height: 0.94;
+  letter-spacing: -0.05em;
+  color: var(--ink);
+}
+
+h1 {
+  max-width: 9ch;
+  position: relative;
+  z-index: 1;
+  font-size: clamp(3rem, 6vw, 5.5rem);
+  animation: rise-in 700ms cubic-bezier(0.2, 0.8, 0.2, 1) 220ms both;
+}
+
+h2 {
+  font-size: clamp(2.1rem, 3vw, 3.8rem);
+}
+
+.lead {
+  margin: 1.2rem 0 0;
+  max-width: 39rem;
+  color: var(--muted);
+  line-height: 1.8;
+  position: relative;
+  z-index: 1;
+  animation: rise-in 700ms cubic-bezier(0.2, 0.8, 0.2, 1) 300ms both;
+}
+
+.axis-page-hero__panel {
+  display: grid;
+  gap: 1rem;
+  padding: 1.35rem;
+  background:
+    linear-gradient(180deg, rgba(255, 255, 255, 0.04), transparent 18%),
+    linear-gradient(180deg, #202a31 0%, #151d22 100%);
+  color: var(--paper);
+  animation: rise-in 700ms cubic-bezier(0.2, 0.8, 0.2, 1) 180ms both;
+}
+
+.axis-page-hero__facts {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 0.7rem;
+}
+
+.axis-page-hero__facts article {
+  display: grid;
+  gap: 0.4rem;
+  padding: 0.95rem;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  background: rgba(255, 255, 255, 0.03);
+  opacity: 0;
+  animation: rise-in 620ms cubic-bezier(0.2, 0.8, 0.2, 1) both;
+}
+
+.axis-page-hero__facts article:nth-child(1) {
+  animation-delay: 360ms;
+}
+
+.axis-page-hero__facts article:nth-child(2) {
+  animation-delay: 440ms;
+}
+
+.axis-page-hero__facts article:nth-child(3) {
+  animation-delay: 520ms;
+}
+
+.axis-page-hero__facts span {
+  font-family: var(--font-mono);
+  font-size: 0.68rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: rgba(246, 240, 228, 0.64);
+}
+
+.axis-page-hero__facts strong {
+  font-family: var(--font-display);
+  font-size: 2rem;
+  line-height: 1;
+}
+
+.axis-page-hero__contents {
+  margin-top: auto;
+  padding-top: 1rem;
+  border-top: 1px solid rgba(255, 255, 255, 0.14);
+}
+
+.axis-page-hero__contents-label {
+  margin: 0;
+  color: #efb487;
+}
+
+.axis-page-hero__contents ol {
+  list-style: none;
+  display: grid;
+  gap: 0.75rem;
+  padding: 0;
+  margin: 0.9rem 0 0;
+}
+
+.axis-page-hero__contents li {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  gap: 0.8rem;
+  align-items: baseline;
+  padding-top: 0.75rem;
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+  opacity: 0;
+  animation: rise-in 620ms cubic-bezier(0.2, 0.8, 0.2, 1) both;
+}
+
+.axis-page-hero__contents li:nth-child(1) {
+  animation-delay: 440ms;
+}
+
+.axis-page-hero__contents li:nth-child(2) {
+  animation-delay: 520ms;
+}
+
+.axis-page-hero__contents li:nth-child(3) {
+  animation-delay: 600ms;
+}
+
+.axis-page-hero__contents li:nth-child(4) {
+  animation-delay: 680ms;
+}
+
+.axis-page-hero__contents li:nth-child(5) {
+  animation-delay: 760ms;
+}
+
+.axis-page-hero__contents span {
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  color: rgba(255, 255, 255, 0.62);
+}
+
+.axis-page-hero__contents strong {
+  font-size: 0.94rem;
+  line-height: 1.45;
+}
+
+.related-axes {
+  margin-top: 3rem;
+  padding-top: 2rem;
+  border-top: 1px solid var(--line-strong);
+}
+
+.related-axes__heading {
+  opacity: 0;
+  animation: rise-in 700ms cubic-bezier(0.2, 0.8, 0.2, 1) 180ms both;
+}
+
+.related-axes__grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 1.2rem;
+  margin-top: 1.35rem;
+}
+
+.related-axes__grid app-axis-card {
+  opacity: 0;
+  animation: rise-in 680ms cubic-bezier(0.2, 0.8, 0.2, 1) both;
+}
+
+.related-axes__grid app-axis-card:nth-child(1) {
+  animation-delay: 260ms;
+}
+
+.related-axes__grid app-axis-card:nth-child(2) {
+  animation-delay: 360ms;
+}
+
+.related-axes__grid app-axis-card:nth-child(3) {
+  animation-delay: 460ms;
+}
+
+.related-axes__grid app-axis-card:nth-child(4) {
+  animation-delay: 560ms;
+}
+
+@media (max-width: 1080px) {
+  .axis-page-shell {
+    width: min(1260px, calc(100% - 1.4rem));
+  }
+
+  .axis-page-hero {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 760px) {
+  .axis-page-hero__facts,
+  .related-axes__grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 560px) {
+  .axis-page-shell {
+    padding-top: 2rem;
+  }
+
+  .axis-page-hero__copy,
+  .axis-page-hero__panel {
+    padding: 1.15rem;
+  }
+}

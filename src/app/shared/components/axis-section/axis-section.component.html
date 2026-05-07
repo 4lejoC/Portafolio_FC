@@ -1,0 +1,56 @@
+<section
+  class="axis-section"
+  [style.--axis-accent]="page().accent"
+  [attr.id]="page().id"
+>
+  <aside class="axis-intro">
+    <div class="axis-intro__header">
+      <span class="axis-index">Capitulo {{ page().index }}</span>
+      <p class="axis-subtitle">{{ page().subtitle }}</p>
+    </div>
+
+    <h2>{{ page().title }}</h2>
+    <p class="axis-description">{{ page().description }}</p>
+
+    <div class="axis-outcomes-block">
+      <p class="axis-label">Objetivos del capitulo</p>
+      <ul class="axis-outcomes">
+        @for (outcome of page().outcomes; track outcome) {
+          <li>{{ outcome }}</li>
+        }
+      </ul>
+    </div>
+  </aside>
+
+  <div class="axis-topics">
+    @for (topic of page().topics; track topic.title; let topicIndex = $index) {
+      <article class="topic-card">
+        <div class="topic-card__header">
+          <span class="topic-card__index">{{ page().index }}.{{ topicIndex + 1 }}</span>
+
+          <div class="topic-chip-group">
+            @for (standard of topic.standards; track standard) {
+              <span>{{ standard }}</span>
+            }
+          </div>
+        </div>
+
+        <div class="topic-card__copy">
+          <p class="topic-card__eyebrow">Bloque estrategico</p>
+          <h3>{{ topic.title }}</h3>
+          <p class="topic-summary">{{ topic.summary }}</p>
+        </div>
+
+        <ul>
+          @for (bullet of topic.bullets; track bullet) {
+            <li>{{ bullet }}</li>
+          }
+        </ul>
+
+        @if (topic.note) {
+          <p class="topic-note">{{ topic.note }}</p>
+        }
+      </article>
+    }
+  </div>
+</section>
