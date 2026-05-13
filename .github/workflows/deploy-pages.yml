@@ -1,0 +1,69 @@
+name: Deploy Main Site to GitHub Pages
+
+on:
+  push:
+    branches:
+      - main
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: github-pages
+  cancel-in-progress: true
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: npm
+
+      - name: Configure GitHub Pages
+        uses: actions/configure-pages@v5
+
+      - name: Resolve base href
+        id: base
+        shell: bash
+        run: |
+          if [ -n "${{ vars.PAGES_BASE_HREF }}" ]; then
+            BASE_HREF="${{ vars.PAGES_BASE_HREF }}"
+          else
+            BASE_HREF="/${{ github.event.repository.name }}/"
+          fi
+
+          echo "Using base href: $BASE_HREF"
+          echo "base_href=$BASE_HREF" >> "$GITHUB_OUTPUT"
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Build site
+        run: npm run build -- --base-href "${{ steps.base.outputs.base_href }}"
+
+      - name: Upload Pages artifact
+        uses: actions/upload-pages-artifact@v4
+        with:
+          path: dist/Portafolio_FC/browser
+
+  deploy:
+    needs: build
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+
+    steps:
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4
