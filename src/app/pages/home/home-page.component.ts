@@ -1,5 +1,4 @@
 import { ChangeDetectionStrategy, Component } from '@angular/core';
-import { RouterLink } from '@angular/router';
 
 import { homePage } from '../../core/data/home-page.data';
 import { navigationItems } from '../../core/data/navigation-items.data';
@@ -9,7 +8,7 @@ import { SiteHeaderComponent } from '../../shared/components/site-header/site-he
 
 @Component({
   selector: 'app-home-page',
-  imports: [AxisCardComponent, HeroPanelComponent, RouterLink, SiteHeaderComponent],
+  imports: [AxisCardComponent, HeroPanelComponent, SiteHeaderComponent],
   templateUrl: './home-page.component.html',
   styleUrl: './home-page.component.css',
   changeDetection: ChangeDetectionStrategy.OnPush
@@ -17,6 +16,7 @@ import { SiteHeaderComponent } from '../../shared/components/site-header/site-he
 export class HomePageComponent {
   protected readonly page = homePage;
   protected readonly navigationItems = navigationItems;
+  protected readonly heroPrimaryHref = '#ejes';
   protected readonly coverVisualSrc = '/report-visuals/portada.png';
   protected readonly coverVisualAlt =
     'Escena comercial de consultoría y planificación para el portafolio de servicios de PRO3';

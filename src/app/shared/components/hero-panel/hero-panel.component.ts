@@ -1,11 +1,10 @@
 import { ChangeDetectionStrategy, Component, input } from '@angular/core';
-import { RouterLink } from '@angular/router';
 
 import { SiteMetric } from '../../../core/models/site-page.model';
 
 @Component({
   selector: 'app-hero-panel',
-  imports: [RouterLink],
+  imports: [],
   templateUrl: './hero-panel.component.html',
   styleUrl: './hero-panel.component.css',
   changeDetection: ChangeDetectionStrategy.OnPush

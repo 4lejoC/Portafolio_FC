@@ -7,7 +7,7 @@
     [subtitle]="page.subtitle"
     [description]="page.description"
     [metrics]="page.metrics"
-    [featurePath]="navigationItems[0].route"
+    [featurePath]="heroPrimaryHref"
     [visualSrc]="coverVisualSrc"
     [visualAlt]="coverVisualAlt"
   />
@@ -31,7 +31,7 @@
     </div>
   </section>
 
-  <section class="home-section home-section--process" aria-labelledby="proceso-title">
+  <section class="home-section home-section--process" id="proceso" aria-labelledby="proceso-title">
     <div class="process-layout">
       <div class="section-heading process-layout__heading">
         <p class="section-heading__eyebrow">Cómo trabajamos</p>
@@ -56,7 +56,7 @@
     </div>
   </section>
 
-  <section class="home-section home-section--differentiators" aria-labelledby="diferenciales-title">
+  <section class="home-section home-section--differentiators" id="diferenciales" aria-labelledby="diferenciales-title">
     <div class="section-heading section-heading--split">
       <div>
         <p class="section-heading__eyebrow">Por qué PRO3</p>
@@ -89,7 +89,7 @@
 
       <div class="entry-stack">
         @for (entry of page.entryPoints; track entry.title; let index = $index) {
-          <a class="entry-strip" [routerLink]="entry.route">
+          <a class="entry-strip" [attr.href]="entry.route">
             <span class="entry-strip__index">0{{ index + 1 }}</span>
 
             <div class="entry-strip__copy">

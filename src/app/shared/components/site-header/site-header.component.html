@@ -1,6 +1,6 @@
 <header class="site-header">
   <div class="site-shell">
-    <a class="brand" routerLink="/">
+    <a class="brand" href="#inicio">
       <img
         class="brand-logo"
         src="/report-visuals/Logo%20PRO3.jpg.jpeg"
@@ -10,19 +10,13 @@
 
     <div class="site-actions">
       <nav class="site-nav" aria-label="Navegación principal">
-        <a
-          class="site-nav__home"
-          routerLink="/"
-          routerLinkActive="is-active"
-          [routerLinkActiveOptions]="{ exact: true }"
-        >Inicio</a>
-
-        @for (item of items(); track item.id) {
-          <a [routerLink]="item.route" routerLinkActive="is-active">{{ item.title }}</a>
-        }
+        <a class="site-nav__home" href="#inicio">Inicio</a>
+        <a href="#ejes">Ejes</a>
+        <a href="#proceso">Cómo trabajamos</a>
+        <a href="#diferenciales">Por qué PRO3</a>
       </nav>
 
-      <a class="header-cta" [routerLink]="['/']" fragment="siguiente-paso">Hablemos</a>
+      <a class="header-cta" href="#siguiente-paso">Hablemos</a>
     </div>
   </div>
 </header>

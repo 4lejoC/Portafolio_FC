@@ -63,7 +63,7 @@ export const homePage: HomePageData = {
       index: '03',
       title: 'Implementación',
       summary:
-        'Desarrollamos bienes, productos y/o servicios según el eje y la necesidad del cliente y acorde a la planificación.'
+        'Desarrollamos bienes, productos y servicios según el eje, la necesidad del cliente y la planificación acordada.'
     },
     {
       index: '04',
@@ -77,22 +77,22 @@ export const homePage: HomePageData = {
       title: 'Diagnóstico inicial',
       summary:
         'Ideal para organizaciones que necesitan claridad sobre brechas, prioridades y siguiente paso.',
-      route: '/proyectos',
-      label: 'Explorar proyectos'
+      route: '#siguiente-paso',
+      label: 'Solicitar diagnóstico'
     },
     {
       title: 'Fortalecimiento de control y riesgo',
       summary:
         'Para equipos que necesitan elevar protección, cumplimiento y capacidad de respuesta.',
-      route: '/ciberseguridad',
-      label: 'Explorar ciberseguridad'
+      route: '#siguiente-paso',
+      label: 'Solicitar evaluación'
     },
     {
       title: 'Formación aplicada',
       summary:
         'Para líderes y equipos que necesitan método, lenguaje común y mejor capacidad de ejecución.',
-      route: '/capacitacion',
-      label: 'Explorar capacitación'
+      route: '#siguiente-paso',
+      label: 'Solicitar capacitación'
     }
   ],
   closingTitle: 'Elige el mejor punto de partida para tu organización',
