@@ -1,34 +1,28 @@
-<header class="utility-bar">
-  <div class="utility-shell">
-    <p class="utility-copy">
-      <span class="utility-label">Expediente base</span>
-      Documento estructurado desde <strong>docs</strong>
-    </p>
-    <p class="utility-status">{{ items().length }} capitulos / portada + detalle</p>
-  </div>
-</header>
-
 <header class="site-header">
   <div class="site-shell">
     <a class="brand" routerLink="/">
-      <span class="brand-index">PF</span>
-      <span class="brand-copy">
-        <small>Portafolio FC / Dossier tecnico</small>
-        <strong>{{ pageTitle() }}</strong>
-      </span>
+      <img
+        class="brand-logo"
+        src="/report-visuals/Logo%20PRO3.jpg.jpeg"
+        alt="PRO3 Project & Program Management Professionals"
+      />
     </a>
 
-    <nav class="site-nav" aria-label="Navegacion principal">
-      <a class="site-nav__home" routerLink="/">
-        <span>00</span>
-        <strong>Inicio</strong>
-      </a>
-      @for (item of items(); track item.id) {
-        <a [routerLink]="item.route">
-          <span>{{ item.index }}</span>
-          <strong>{{ item.title }}</strong>
-        </a>
-      }
-    </nav>
+    <div class="site-actions">
+      <nav class="site-nav" aria-label="Navegación principal">
+        <a
+          class="site-nav__home"
+          routerLink="/"
+          routerLinkActive="is-active"
+          [routerLinkActiveOptions]="{ exact: true }"
+        >Inicio</a>
+
+        @for (item of items(); track item.id) {
+          <a [routerLink]="item.route" routerLinkActive="is-active">{{ item.title }}</a>
+        }
+      </nav>
+
+      <a class="header-cta" [routerLink]="['/']" fragment="siguiente-paso">Hablemos</a>
+    </div>
   </div>
 </header>

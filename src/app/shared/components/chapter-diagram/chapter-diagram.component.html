@@ -1,0 +1,25 @@
+<section class="chapter-diagram" [attr.data-chapter]="page().id">
+  <div class="chapter-diagram__intro">
+    <div class="chapter-diagram__copy">
+      <p class="chapter-diagram__eyebrow">{{ page().diagram.eyebrow }}</p>
+      <h2>{{ page().diagram.title }}</h2>
+      <p class="chapter-diagram__summary">{{ page().diagram.summary }}</p>
+    </div>
+
+    <article class="chapter-diagram__core">
+      <span class="chapter-diagram__chapter">Eje {{ page().index }}</span>
+      <strong>{{ page().diagram.centerValue }}</strong>
+      <p>{{ page().diagram.centerLabel }}</p>
+    </article>
+  </div>
+
+  <ol class="chapter-diagram__track">
+    @for (node of page().diagram.nodes; track node.label; let nodeIndex = $index) {
+      <li class="chapter-diagram__node">
+        <span class="chapter-diagram__node-index">{{ page().index }}.{{ nodeIndex + 1 }}</span>
+        <h3>{{ node.label }}</h3>
+        <p>{{ node.detail }}</p>
+      </li>
+    }
+  </ol>
+</section>

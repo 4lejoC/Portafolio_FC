@@ -1,4 +1,4 @@
-<app-site-header [pageTitle]="page.title" [items]="navigationItems" />
+<app-site-header [items]="navigationItems" />
 
 <main class="page-shell">
   <app-hero-panel
@@ -6,25 +6,101 @@
     [title]="page.title"
     [subtitle]="page.subtitle"
     [description]="page.description"
-    [focusAreas]="page.focusAreas"
     [metrics]="page.metrics"
     [featurePath]="navigationItems[0].route"
+    [visualSrc]="coverVisualSrc"
+    [visualAlt]="coverVisualAlt"
   />
 
-  <section class="overview" id="ejes">
-    <div class="overview-heading">
-      <p class="eyebrow">Indice del reporte</p>
-      <h2>Cinco paginas para recorrer el documento</h2>
-      <p>
-        La portada no concentra el detalle tecnico. Cada tarjeta abre una pagina independiente con
-        el contenido real del eje correspondiente.
+  <section class="home-section home-section--services" id="ejes" aria-labelledby="ejes-title">
+    <div class="section-heading section-heading--split">
+      <div>
+        <p class="section-heading__eyebrow">Ejes principales</p>
+        <h2 id="ejes-title">Cinco frentes para ordenar, proteger y fortalecer la organización.</h2>
+      </div>
+
+      <p class="section-heading__copy">
+        Cada eje puede activarse según la prioridad de la organización.
       </p>
     </div>
 
-    <div class="overview-grid">
+    <div class="axis-grid">
       @for (item of navigationItems; track item.id) {
         <app-axis-card [item]="item" />
       }
+    </div>
+  </section>
+
+  <section class="home-section home-section--process" aria-labelledby="proceso-title">
+    <div class="process-layout">
+      <div class="section-heading process-layout__heading">
+        <p class="section-heading__eyebrow">Cómo trabajamos</p>
+        <h2 id="proceso-title">Una ruta clara para pasar de diagnóstico a resultados.</h2>
+        <p class="section-heading__copy">
+          El proceso se adapta al eje priorizado, pero siempre conserva una secuencia simple: entender, definir, implementar y acompañar.
+        </p>
+      </div>
+
+      <ol class="process-rail">
+        @for (step of page.process; track step.index) {
+          <li class="process-step">
+            <span class="process-step__index">{{ step.index }}</span>
+
+            <article class="process-step__body">
+              <h3>{{ step.title }}</h3>
+              <p>{{ step.summary }}</p>
+            </article>
+          </li>
+        }
+      </ol>
+    </div>
+  </section>
+
+  <section class="home-section home-section--differentiators" aria-labelledby="diferenciales-title">
+    <div class="section-heading section-heading--split">
+      <div>
+        <p class="section-heading__eyebrow">Por qué PRO3</p>
+        <h2 id="diferenciales-title">Metodología aplicada para resolver retos reales.</h2>
+      </div>
+
+      <p class="section-heading__copy">
+        Consultoría, acompañamiento y formación conectados en una misma intervención.
+      </p>
+    </div>
+
+    <div class="differentiator-stage">
+      @for (item of page.differentiators; track item.title; let index = $index) {
+        <article class="differentiator-line">
+          <span class="differentiator-line__index">0{{ index + 1 }}</span>
+          <h3>{{ item.title }}</h3>
+          <p>{{ item.summary }}</p>
+        </article>
+      }
+    </div>
+  </section>
+
+  <section class="home-section home-section--cta" id="siguiente-paso" aria-labelledby="cta-title">
+    <div class="cta-stage">
+      <div class="cta-stage__intro">
+        <p class="section-heading__eyebrow">Siguiente paso</p>
+        <h2 id="cta-title">{{ page.closingTitle }}</h2>
+        <p class="section-heading__copy">{{ page.closingDescription }}</p>
+      </div>
+
+      <div class="entry-stack">
+        @for (entry of page.entryPoints; track entry.title; let index = $index) {
+          <a class="entry-strip" [routerLink]="entry.route">
+            <span class="entry-strip__index">0{{ index + 1 }}</span>
+
+            <div class="entry-strip__copy">
+              <h3>{{ entry.title }}</h3>
+              <p>{{ entry.summary }}</p>
+            </div>
+
+            <strong>{{ entry.label }}</strong>
+          </a>
+        }
+      </div>
     </div>
   </section>
 </main>

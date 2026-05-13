@@ -1,15 +1,13 @@
 import { ChangeDetectionStrategy, Component, input } from '@angular/core';
-import { RouterLink } from '@angular/router';
 
 import { SectionPageData } from '../../../core/models/site-page.model';
 
 @Component({
-  selector: 'app-axis-section',
-  imports: [RouterLink],
-  templateUrl: './axis-section.component.html',
-  styleUrl: './axis-section.component.css',
+  selector: 'app-chapter-diagram',
+  templateUrl: './chapter-diagram.component.html',
+  styleUrl: './chapter-diagram.component.css',
   changeDetection: ChangeDetectionStrategy.OnPush
 })
-export class AxisSectionComponent {
+export class ChapterDiagramComponent {
   readonly page = input.required<SectionPageData>();
 }

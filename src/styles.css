@@ -1,34 +1,26 @@
-@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&family=IBM+Plex+Sans:wght@400;500;600;700&family=Space+Grotesk:wght@400;500;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&family=IBM+Plex+Sans:wght@400;500;600;700&display=swap');
 
 @import 'tailwindcss';
 
 :root {
-  --font-display: 'Space Grotesk', 'Segoe UI', sans-serif;
+  --font-display: 'IBM Plex Sans', 'Segoe UI', sans-serif;
   --font-body: 'IBM Plex Sans', 'Segoe UI', sans-serif;
   --font-mono: 'IBM Plex Mono', 'Consolas', monospace;
-  --paper: #f6f0e4;
-  --paper-deep: #eadfce;
-  --paper-soft: rgba(255, 251, 244, 0.8);
-  --ink: #181410;
-  --ink-soft: #3f3933;
-  --muted: #655d54;
-  --line: rgba(24, 20, 16, 0.12);
-  --line-strong: rgba(24, 20, 16, 0.24);
-  --teal: #1d5b52;
-  --copper: #a15f34;
-  --navy: #1b2730;
+  --paper: #fcfaf6;
+  --paper-soft: #f5efe7;
+  --paper-muted: #eadfce;
+  --ink: #253348;
+  --ink-soft: #35445a;
+  --muted: #697587;
+  --line: rgba(53, 68, 90, 0.14);
+  --line-strong: rgba(53, 68, 90, 0.24);
+  --navy: #2e4966;
+  --blue: #59769e;
+  --teal: #5f8677;
+  --gold: #b99b6b;
+  --shadow: 0 18px 42px -32px rgba(36, 49, 68, 0.18);
   color: var(--ink);
-  background:
-    linear-gradient(180deg, rgba(24, 20, 16, 0.03), rgba(24, 20, 16, 0) 18%),
-    radial-gradient(circle at 12% 0%, rgba(29, 91, 82, 0.12), transparent 22%),
-    radial-gradient(circle at 100% 18%, rgba(161, 95, 52, 0.14), transparent 20%),
-    repeating-linear-gradient(
-      90deg,
-      transparent 0,
-      transparent 95px,
-      rgba(24, 20, 16, 0.03) 96px
-    ),
-    linear-gradient(180deg, #f8f3ea 0%, #efe5d6 100%);
+  background: #f7f2ea;
 }
 
 html {
@@ -39,20 +31,12 @@ body {
   margin: 0;
   min-width: 320px;
   font-family: var(--font-body);
-  background: inherit;
-  color: inherit;
-  position: relative;
-}
-
-body::before {
-  content: '';
-  position: fixed;
-  inset: 0;
-  pointer-events: none;
   background:
-    linear-gradient(180deg, rgba(255, 255, 255, 0.18), transparent 22%),
-    linear-gradient(90deg, rgba(255, 255, 255, 0.08), transparent 24%);
-  opacity: 0.75;
+    radial-gradient(circle at top left, rgba(255, 255, 255, 0.9), transparent 26%),
+    radial-gradient(circle at 82% 16%, rgba(89, 118, 158, 0.08), transparent 18%),
+    radial-gradient(circle at 20% 66%, rgba(185, 155, 107, 0.1), transparent 24%),
+    linear-gradient(180deg, #fbf8f3 0%, #f6f0e8 52%, #f1e9de 100%);
+  color: inherit;
 }
 
 *,
@@ -65,43 +49,71 @@ a {
   color: inherit;
 }
 
+img {
+  max-width: 100%;
+}
+
 ::selection {
-  background: rgba(29, 91, 82, 0.18);
+  background: rgba(30, 92, 168, 0.18);
+}
+
+[data-chapter] {
+  --chapter-accent: var(--blue);
+  --chapter-marker: #6a7d96;
+  --chapter-wash: rgba(89, 118, 158, 0.08);
+  --chapter-panel-top: #5c7494;
+  --chapter-panel-bottom: #465c79;
+}
+
+[data-chapter='proyectos'] {
+  --chapter-accent: #5f8677;
+  --chapter-marker: #7f9c92;
+  --chapter-wash: rgba(95, 134, 119, 0.08);
+  --chapter-panel-top: #688777;
+  --chapter-panel-bottom: #4d685b;
+}
+
+[data-chapter='ciberseguridad'] {
+  --chapter-accent: #b7846e;
+  --chapter-marker: #b39989;
+  --chapter-wash: rgba(183, 132, 110, 0.08);
+  --chapter-panel-top: #aa7d68;
+  --chapter-panel-bottom: #865f4e;
+}
+
+[data-chapter='seguridad-informacion'] {
+  --chapter-accent: #b59a63;
+  --chapter-marker: #a99a79;
+  --chapter-wash: rgba(181, 154, 99, 0.08);
+  --chapter-panel-top: #af986c;
+  --chapter-panel-bottom: #86744e;
+}
+
+[data-chapter='gobernanza-tic'] {
+  --chapter-accent: #6f86af;
+  --chapter-marker: #8799ba;
+  --chapter-wash: rgba(111, 134, 175, 0.08);
+  --chapter-panel-top: #7086a8;
+  --chapter-panel-bottom: #54667f;
+}
+
+[data-chapter='capacitacion'] {
+  --chapter-accent: #7a9972;
+  --chapter-marker: #8ea488;
+  --chapter-wash: rgba(122, 153, 114, 0.08);
+  --chapter-panel-top: #7b9772;
+  --chapter-panel-bottom: #627a5b;
 }
 
 @keyframes rise-in {
   from {
     opacity: 0;
-    transform: translateY(18px);
+    transform: translateY(16px);
   }
 
   to {
     opacity: 1;
     transform: translateY(0);
-  }
-}
-
-@keyframes fade-in {
-  from {
-    opacity: 0;
-  }
-
-  to {
-    opacity: 1;
-  }
-}
-
-@keyframes line-drop {
-  from {
-    opacity: 0;
-    transform: scaleY(0.15);
-    transform-origin: top;
-  }
-
-  to {
-    opacity: 1;
-    transform: scaleY(1);
-    transform-origin: top;
   }
 }
 

@@ -1,42 +1,59 @@
+:host {
+  display: block;
+  min-width: 0;
+}
+
 .axis-card {
   display: grid;
   gap: 1rem;
   min-height: 100%;
-  padding: 1.35rem 1.35rem 1.45rem;
-  background: rgba(255, 251, 244, 0.82);
-  border: 1px solid var(--line-strong);
+  padding: 1.35rem 1.35rem 1.25rem;
+  border: 1px solid rgba(54, 68, 90, 0.12);
+  border-radius: 1.35rem;
+  box-shadow: 0 20px 34px -30px rgba(36, 49, 68, 0.22);
+  background:
+    radial-gradient(circle at top right, color-mix(in srgb, var(--axis-accent) 12%, transparent), transparent 36%),
+    linear-gradient(180deg, rgba(255, 255, 255, 0.94), rgba(255, 255, 255, 0.82));
   position: relative;
   overflow: hidden;
+  animation: rise-in 620ms cubic-bezier(0.22, 1, 0.36, 1) both;
+  animation-delay: var(--enter-delay, 0s);
   transition:
-    transform 240ms ease,
-    border-color 240ms ease,
-    background-color 240ms ease,
-    box-shadow 240ms ease;
+    transform 180ms ease,
+    border-color 180ms ease,
+    background-color 180ms ease,
+    box-shadow 180ms ease;
 }
 
 .axis-card::before {
   content: '';
   position: absolute;
-  inset: 0 auto 0 0;
-  width: 5px;
+  top: 1.35rem;
+  left: 1.35rem;
+  bottom: 1.35rem;
+  width: 0.35rem;
+  border-radius: 999px;
   background: var(--axis-accent);
 }
 
 .axis-card::after {
   content: '';
   position: absolute;
-  left: 1.35rem;
-  right: 1.35rem;
-  bottom: 1.15rem;
-  height: 1px;
-  background: var(--line);
+  inset: 0;
+  border-radius: inherit;
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.18), transparent 42%);
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 220ms ease;
 }
 
 .axis-card:hover {
   transform: translateY(-4px);
-  background: rgba(255, 251, 244, 0.92);
-  border-color: rgba(24, 20, 16, 0.22);
-  box-shadow: 0 20px 40px -34px rgba(24, 20, 16, 0.35);
+  box-shadow: 0 24px 38px -30px rgba(36, 49, 68, 0.28);
+}
+
+.axis-card:hover::after {
+  opacity: 1;
 }
 
 .axis-card__top {
@@ -44,6 +61,7 @@
   justify-content: space-between;
   gap: 0.8rem;
   align-items: center;
+  padding-left: 1.1rem;
   font-family: var(--font-mono);
   font-size: 0.72rem;
   letter-spacing: 0.08em;
@@ -59,15 +77,16 @@
   color: var(--muted);
 }
 
-.axis-card__head {
+.axis-card__body {
   display: grid;
-  gap: 0.35rem;
+  gap: 0.55rem;
+  padding-left: 1.1rem;
 }
 
 .axis-card__subtitle {
   margin: 0;
   font-family: var(--font-mono);
-  font-size: 0.72rem;
+  font-size: 0.7rem;
   letter-spacing: 0.08em;
   text-transform: uppercase;
   color: var(--muted);
@@ -75,68 +94,47 @@
 
 h3 {
   margin: 0;
-  max-width: 8ch;
+  max-width: 11ch;
   font-family: var(--font-display);
-  font-size: clamp(2rem, 2.8vw, 2.7rem);
-  line-height: 0.94;
-  letter-spacing: -0.05em;
+  font-size: clamp(1.6rem, 2vw, 2rem);
+  line-height: 1.02;
+  letter-spacing: -0.04em;
   color: var(--ink);
 }
 
-.axis-card__description,
-ul {
+.axis-card__promise {
   margin: 0;
-  color: var(--muted);
-  line-height: 1.65;
+  max-width: 30ch;
+  line-height: 1.62;
 }
 
-ul {
-  list-style: none;
-  display: grid;
-  gap: 0.55rem;
-  padding: 0;
-}
-
-li {
-  position: relative;
-  padding-left: 1rem;
-}
-
-li::before {
-  content: '+';
-  position: absolute;
-  left: 0;
-  color: var(--axis-accent);
-  font-weight: 700;
+.axis-card__promise {
+  font-size: 0.98rem;
+  color: var(--ink-soft);
 }
 
 .axis-card__link {
-  display: flex;
-  justify-content: space-between;
-  align-items: end;
-  gap: 1rem;
+  display: inline-flex;
+  align-items: center;
   margin-top: auto;
-  padding-top: 0.85rem;
+  min-height: 2.8rem;
+  width: fit-content;
+  margin-left: 1.1rem;
+  padding: 0 0.95rem;
+  border: 1px solid color-mix(in srgb, var(--axis-accent) 24%, var(--line));
+  border-radius: 999px;
   color: var(--ink);
   text-decoration: none;
-  border-top: 1px solid var(--line);
-  position: relative;
-  z-index: 1;
-  transition: gap 220ms ease, color 220ms ease;
+  background: rgba(255, 255, 255, 0.72);
+  transition:
+    border-color 180ms ease,
+    background-color 180ms ease;
 }
 
 .axis-card__link strong {
   font-size: 0.95rem;
 }
 
-.axis-card__link span {
-  font-family: var(--font-mono);
-  font-size: 0.72rem;
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
-  color: var(--muted);
-}
-
 .axis-card:hover .axis-card__link {
-  gap: 1.25rem;
+  background: rgba(255, 255, 255, 0.88);
 }

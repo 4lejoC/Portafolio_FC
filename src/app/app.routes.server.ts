@@ -1,30 +1,17 @@
 import { RenderMode, ServerRoute } from '@angular/ssr';
+import { sectionPages } from './core/data/section-pages.data';
+
+const prerenderedSectionRoutes: ServerRoute[] = sectionPages.map((page) => ({
+  path: page.route.slice(1),
+  renderMode: RenderMode.Prerender
+}));
 
 export const serverRoutes: ServerRoute[] = [
   {
     path: '',
     renderMode: RenderMode.Prerender
   },
-  {
-    path: 'proyectos',
-    renderMode: RenderMode.Prerender
-  },
-  {
-    path: 'ciberseguridad',
-    renderMode: RenderMode.Prerender
-  },
-  {
-    path: 'seguridad-informacion',
-    renderMode: RenderMode.Prerender
-  },
-  {
-    path: 'gobernanza-tic',
-    renderMode: RenderMode.Prerender
-  },
-  {
-    path: 'capacitacion',
-    renderMode: RenderMode.Prerender
-  },
+  ...prerenderedSectionRoutes,
   {
     path: '**',
     renderMode: RenderMode.Server

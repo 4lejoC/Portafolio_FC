@@ -4,49 +4,120 @@ export const trainingPage: SectionPageData = {
   id: 'capacitacion',
   route: '/capacitacion',
   index: '05',
-  title: 'Capacitacion',
-  subtitle: 'Eje de Formacion',
+  title: 'Capacitación',
+  subtitle: 'Eje de Formación',
+  promise:
+    'Desarrollamos capacidades aplicables para que líderes y equipos ejecuten mejor, con método y criterio.',
   description:
-    'El capital humano capacitado es el garante de la sostenibilidad de la estrategia tecnologica.',
-  outcomes: [
-    'Consolida capacidades de liderazgo en proyectos predictivos, agiles e hibridos.',
-    'Fortalece la identificacion y mitigacion de amenazas con especializacion en riesgos.',
-    'Incorpora una formula explicita de criticidad para priorizar activos.'
+    'Está orientado a organizaciones que necesitan elevar criterio, lenguaje común y capacidad de ejecución sin caer en formación genérica o solo teórica.',
+  painPoints: [
+    'Equipos sin un lenguaje común para gestionar iniciativas y tomar decisiones.',
+    'Capacitaciones teóricas que no logran bajar a la realidad del trabajo.',
+    'Necesidad de fortalecer liderazgo, agilidad y criterio de riesgo dentro de la operación.'
   ],
-  accent: '#15803d',
+  outcomes: [
+    'Fortalece liderazgo y lenguaje común en gestión de proyectos.',
+    'Acelera la adopción de enfoques ágiles, híbridos y de gestión de riesgos.',
+    'Convierte la capacitación en una herramienta aplicable a decisiones y resultados.'
+  ],
+  deliverables: [
+    'Rutas de formación por perfil o necesidad.',
+    'Talleres aplicados para equipos y líderes.',
+    'Preparación para certificaciones relevantes.',
+    'Mentoring para resolver casos reales.',
+    'Transferencia práctica hacia la operación.'
+  ],
+  trustPoints: [
+    'Formación práctica',
+    'Talleres in-company',
+    'Mentoring aplicado',
+    'Rutas de certificación'
+  ],
+  accent: '#2d7d59',
+  diagram: {
+    eyebrow: 'Ruta de formación',
+    title: 'Cómo llevamos el conocimiento a la práctica',
+    summary:
+      'La formación combina bases metodológicas, talleres aplicados y acompañamiento para que líderes y equipos mejoren su forma de ejecutar proyectos.',
+    centerLabel: 'Núcleo del servicio',
+    centerValue: 'Aprendizaje',
+    nodes: [
+      {
+        label: 'Base',
+        detail: 'Construimos fundamentos comunes en gestión de proyectos y organización del trabajo.'
+      },
+      {
+        label: 'Certificación',
+        detail: 'Preparamos perfiles para rutas de certificación con foco práctico.'
+      },
+      {
+        label: 'Agilidad',
+        detail: 'Impulsamos adopción de enfoques ágiles e híbridos según el contexto.'
+      },
+      {
+        label: 'Riesgo',
+        detail: 'Fortalecemos criterio para priorizar, evaluar y sostener decisiones.'
+      },
+      {
+        label: 'Mentoring',
+        detail: 'Aterrizamos el aprendizaje a la realidad operativa de cada organización.'
+      }
+    ]
+  },
   topics: [
     {
-      title: 'Gerencia de proyectos',
+      title: 'Gestión de proyectos y liderazgo',
       summary:
-        'La certificacion PMP del PMI valida capacidades de liderazgo y gestion en entornos predictivos, agiles e hibridos.',
+        'Fortalecemos capacidades de liderazgo, organización y seguimiento para que los equipos ejecuten con mayor claridad y consistencia.',
       bullets: [
-        'PMP se presenta en el documento como el estandar mundial para gerencia de proyectos.',
-        'CAPM ofrece una base solida para profesionales tecnicos que inician en direccion de proyectos.',
-        'La ruta de formacion conecta lenguaje comun, metodo y trazabilidad ejecutiva.'
+        'Trabajamos fundamentos de gestión, planificación, seguimiento y comunicación.',
+        'La formación se adapta a líderes, responsables de proyectos y equipos de apoyo.',
+        'Las rutas pueden apoyarse en contenidos alineados con referentes como PMI, PMP y CAPM.'
       ],
-      standards: ['PMP', 'CAPM', 'PMI']
+      standards: ['PMP', 'CAPM', 'PMI'],
+      note: 'Consolida lenguaje común y mejores prácticas para liderar proyectos con más seguridad.'
     },
     {
-      title: 'Gestion de riesgos',
+      title: 'Metodologías ágiles e híbridas',
       summary:
-        'La especializacion en riesgos se plantea como una capacidad critica para la resiliencia organizacional.',
+        'Capacitamos en enfoques ágiles, tradicionales e híbridos para que la organización adopte la forma de trabajo más conveniente.',
       bullets: [
-        'PMI-RMP enfoca al profesional en la identificacion y mitigacion de amenazas dentro de proyectos.',
-        'Las certificaciones de Lead Risk Manager en ISO 31000 acreditan competencia para disenar marcos de gestion de riesgos.',
-        'El foco es proteger reputacion, competitividad y continuidad institucional.'
+        'Abordamos principios de Scrum, Kanban y esquemas de trabajo iterativo.',
+        'Mostramos cómo combinar control y adaptación en entornos híbridos.',
+        'La meta es mejorar ejecución, colaboración y capacidad de respuesta del equipo.'
       ],
-      standards: ['PMI-RMP', 'ISO 31000', 'Lead Risk Manager']
+      standards: ['Agile', 'Scrum', 'Híbrido'],
+      note: 'Aporta flexibilidad sin perder control cuando los equipos trabajan con diferentes ritmos.'
     },
     {
-      title: 'Formula de evaluacion de riesgos para priorizacion de activos',
+      title: 'Riesgos y formulación de proyectos',
       summary:
-        'El documento cierra este eje con una formula de criticidad para priorizar activos a partir de vulnerabilidad, amenaza, impacto y probabilidad.',
+        'Desarrollamos criterio para evaluar riesgos, sustentar decisiones y fortalecer proyectos que requieren mejor formulación.',
       bullets: [
-        'Criticidad = (Vulnerabilidad + Amenaza) x Impacto x Probabilidad',
-        'La expresion se usa como criterio de priorizacion dentro del propio reporte.',
-        'Este bloque deja explicito el puente entre formacion, analisis y toma de decisiones.'
+        'Trabajamos análisis de impacto, riesgos y prioridades de acción.',
+        'Ayudamos a traducir ideas en propuestas mejor argumentadas y más viables.',
+        'La capacitación conecta método, análisis y toma de decisiones.'
       ],
-      standards: ['Criticidad', 'Vulnerabilidad', 'Amenaza', 'Impacto', 'Probabilidad']
+      standards: ['Riesgo', 'Impacto', 'Priorización'],
+      note: 'Une conocimiento técnico con criterio para sostener iniciativas frente a evaluadores o directivos.'
+    },
+    {
+      title: 'Talleres in-company y mentoring',
+      summary:
+        'Llevamos la formación al entorno real del cliente para que el aprendizaje se convierta en práctica, acompañamiento y mejora sostenida.',
+      bullets: [
+        'Diseñamos talleres aplicados al contexto, madurez y necesidades de cada organización.',
+        'Combinamos sesiones prácticas con mentoring para resolver casos reales.',
+        'Buscamos que el conocimiento no se quede en teoría, sino que impacte la ejecución.'
+      ],
+      standards: ['In-company', 'Mentoring', 'Aplicación'],
+      note: 'Permite que la capacitación deje resultados concretos y no solo asistencia a sesiones.'
     }
-  ]
+  ],
+  cta: {
+    title: 'Si quieres elevar capacidades sin caer en capacitaciones genéricas, este eje aporta formación útil.',
+    description:
+      'Podemos comenzar por una ruta para líderes, talleres aplicados para equipos o mentoring sobre proyectos y riesgos reales.',
+    label: 'Definir siguiente paso'
+  }
 };

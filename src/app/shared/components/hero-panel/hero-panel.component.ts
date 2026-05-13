@@ -15,7 +15,8 @@ export class HeroPanelComponent {
   readonly title = input.required<string>();
   readonly subtitle = input.required<string>();
   readonly description = input.required<string>();
-  readonly focusAreas = input.required<string[]>();
   readonly metrics = input.required<SiteMetric[]>();
   readonly featurePath = input.required<string>();
+  readonly visualSrc = input<string>();
+  readonly visualAlt = input('');
 }

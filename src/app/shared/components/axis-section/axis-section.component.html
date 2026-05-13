@@ -1,56 +1,109 @@
 <section
   class="axis-section"
   [style.--axis-accent]="page().accent"
+  [attr.data-chapter]="page().id"
   [attr.id]="page().id"
 >
-  <aside class="axis-intro">
-    <div class="axis-intro__header">
-      <span class="axis-index">Capitulo {{ page().index }}</span>
-      <p class="axis-subtitle">{{ page().subtitle }}</p>
+  <div class="axis-editorial">
+    <div class="axis-lead">
+      <div class="axis-intro__header">
+        <span class="axis-index">Eje {{ page().index }}</span>
+        <p class="axis-subtitle">{{ page().subtitle }}</p>
+      </div>
+
+      <div class="axis-copy">
+        <h2>Qué resolvemos y qué recibe tu organización</h2>
+        <p class="axis-summary">{{ page().promise }}</p>
+      </div>
     </div>
 
-    <h2>{{ page().title }}</h2>
-    <p class="axis-description">{{ page().description }}</p>
+    <article class="axis-pains-band">
+      <p class="axis-label">Retos frecuentes</p>
 
-    <div class="axis-outcomes-block">
-      <p class="axis-label">Objetivos del capitulo</p>
-      <ul class="axis-outcomes">
+      <ul class="axis-pains">
+        @for (painPoint of page().painPoints; track painPoint) {
+          <li>{{ painPoint }}</li>
+        }
+      </ul>
+    </article>
+  </div>
+
+  <div class="axis-value-stage">
+    <article class="axis-value-stage__results">
+      <p class="axis-label">Resultados</p>
+
+      <ul class="axis-outcomes axis-outcomes--light">
         @for (outcome of page().outcomes; track outcome) {
           <li>{{ outcome }}</li>
         }
       </ul>
+    </article>
+
+    <article class="axis-value-stage__deliverables">
+      <p class="axis-label">Entregables clave</p>
+
+      <ul class="axis-outcomes">
+        @for (deliverable of page().deliverables; track deliverable) {
+          <li>{{ deliverable }}</li>
+        }
+      </ul>
+    </article>
+  </div>
+
+  <section class="service-flow">
+    <div class="service-flow__intro">
+      <p class="axis-label">Servicios del eje</p>
+      <h2>Cómo activamos este frente</h2>
     </div>
-  </aside>
 
-  <div class="axis-topics">
-    @for (topic of page().topics; track topic.title; let topicIndex = $index) {
-      <article class="topic-card">
-        <div class="topic-card__header">
-          <span class="topic-card__index">{{ page().index }}.{{ topicIndex + 1 }}</span>
+    <div class="service-flow__list">
+      @for (topic of page().topics; track topic.title; let topicIndex = $index) {
+        <article class="service-item">
+          <div class="service-item__rail">
+            <span class="service-item__index">{{ page().index }}.{{ topicIndex + 1 }}</span>
+          </div>
 
-          <div class="topic-chip-group">
-            @for (standard of topic.standards; track standard) {
-              <span>{{ standard }}</span>
+          <div class="service-item__body">
+            <div class="service-item__head">
+              <div class="service-item__title-group">
+                <p class="service-item__eyebrow">Servicio</p>
+                <h3>{{ topic.title }}</h3>
+              </div>
+
+              <div class="topic-chip-group">
+                @for (standard of topic.standards; track standard) {
+                  <span>{{ standard }}</span>
+                }
+              </div>
+            </div>
+
+            <p class="topic-summary">{{ topic.summary }}</p>
+
+            <ul class="service-item__bullets">
+              @for (bullet of topic.bullets; track bullet) {
+                <li>{{ bullet }}</li>
+              }
+            </ul>
+
+            @if (topic.note) {
+              <p class="topic-note">{{ topic.note }}</p>
             }
           </div>
-        </div>
+        </article>
+      }
+    </div>
+  </section>
 
-        <div class="topic-card__copy">
-          <p class="topic-card__eyebrow">Bloque estrategico</p>
-          <h3>{{ topic.title }}</h3>
-          <p class="topic-summary">{{ topic.summary }}</p>
-        </div>
+  <section class="axis-cta">
+    <div class="axis-cta__copy">
+      <p class="axis-cta__eyebrow">Siguiente paso</p>
+      <h3>{{ page().cta.title }}</h3>
+      <p>{{ page().cta.description }}</p>
+    </div>
 
-        <ul>
-          @for (bullet of topic.bullets; track bullet) {
-            <li>{{ bullet }}</li>
-          }
-        </ul>
-
-        @if (topic.note) {
-          <p class="topic-note">{{ topic.note }}</p>
-        }
-      </article>
-    }
-  </div>
+    <div class="axis-cta__actions">
+      <a class="axis-cta__primary" [routerLink]="['/']" fragment="siguiente-paso">{{ page().cta.label }}</a>
+      <a class="axis-cta__secondary" [attr.href]="'#' + page().id">Volver arriba</a>
+    </div>
+  </section>
 </section>
