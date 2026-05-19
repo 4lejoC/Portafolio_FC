@@ -3,7 +3,7 @@ import { SectionPageData } from '../models/site-page.model';
 export const governancePage: SectionPageData = {
   id: 'gobernanza-tic',
   route: '/gobernanza-tic',
-  index: '04',
+  index: '05',
   title: 'Gobernanza TIC',
   subtitle: 'Eje de Gobernanza',
   promise:

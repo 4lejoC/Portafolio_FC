@@ -3,7 +3,7 @@ import { SectionPageData } from '../models/site-page.model';
 export const cybersecurityPage: SectionPageData = {
   id: 'ciberseguridad',
   route: '/ciberseguridad',
-  index: '02',
+  index: '03',
   title: 'Ciberseguridad',
   subtitle: 'Eje de Defensa',
   promise:

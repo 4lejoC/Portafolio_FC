@@ -4,14 +4,14 @@ export const homePage: HomePageData = {
   kicker: 'PRO3 | Consultoría y Capacitación en Gestión de Proyectos y Programas',
   title: 'Transformamos ideas en resultados tangibles',
   subtitle:
-    'Consultoría aplicada para fortalecer proyectos, tecnología, control y capacidades institucionales.',
+    'Consultoría aplicada para fortalecer la gestión de proyectos, riesgos, tecnología, control y capacidades institucionales.',
   description:
-    'En PRO3 acompañamos a organizaciones que necesitan ordenar su ejecución, reducir riesgos y desarrollar capacidades reales. Trabajamos con cinco ejes principales para convertir necesidades complejas en soluciones viables, controladas y con impacto.',
+    'En PRO3 acompañamos a organizaciones que necesitan ordenar su ejecución, reducir riesgos y desarrollar capacidades reales. Trabajamos con seis ejes principales para convertir necesidades complejas en soluciones viables, controladas y con impacto.',
   metrics: [
     {
-      value: '5',
+      value: '6',
       label: 'ejes de acompañamiento',
-      note: 'una propuesta integral para proyectos, control, tecnología y formación'
+      note: 'una propuesta integral para proyectos, riesgos, control, gobierno, tecnología y formación'
     },
     {
       value: '3',
@@ -81,9 +81,9 @@ export const homePage: HomePageData = {
       label: 'Solicitar diagnóstico'
     },
     {
-      title: 'Fortalecimiento de control y riesgo',
+      title: 'Prevención y gestión de riesgos',
       summary:
-        'Para equipos que necesitan elevar protección, cumplimiento y capacidad de respuesta.',
+        'Para organizaciones que necesitan identificar exposiciones, priorizar tratamientos y reforzar continuidad antes de que el riesgo impacte la operación.',
       route: '#siguiente-paso',
       label: 'Solicitar evaluación'
     },
@@ -97,5 +97,5 @@ export const homePage: HomePageData = {
   ],
   closingTitle: 'Elige el mejor punto de partida para tu organización',
   closingDescription:
-    'Podemos comenzar con un diagnóstico, un fortalecimiento puntual o una ruta de acompañamiento por ejes. La prioridad depende del estado actual de tus proyectos, controles y capacidades.'
+    'Podemos comenzar con un diagnóstico, una ruta de prevención o un fortalecimiento puntual por ejes. La prioridad depende del estado actual de tus proyectos, riesgos, controles y capacidades.'
 };

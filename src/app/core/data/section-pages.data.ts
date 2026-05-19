@@ -3,10 +3,12 @@ import { cybersecurityPage } from './cybersecurity-page.data';
 import { governancePage } from './governance-page.data';
 import { informationSecurityPage } from './information-security-page.data';
 import { projectsPage } from './projects-page.data';
+import { risksPage } from './risks-page.data';
 import { trainingPage } from './training-page.data';
 
 export const sectionPages: SectionPageData[] = [
   projectsPage,
+  risksPage,
   cybersecurityPage,
   informationSecurityPage,
   governancePage,

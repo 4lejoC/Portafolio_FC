@@ -3,7 +3,7 @@ import { SectionPageData } from '../models/site-page.model';
 export const trainingPage: SectionPageData = {
   id: 'capacitacion',
   route: '/capacitacion',
-  index: '05',
+  index: '06',
   title: 'Capacitación',
   subtitle: 'Eje de Formación',
   promise:

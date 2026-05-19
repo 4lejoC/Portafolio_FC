@@ -73,6 +73,14 @@ img {
   --chapter-panel-bottom: #4d685b;
 }
 
+[data-chapter='riesgos'] {
+  --chapter-accent: #9a5c48;
+  --chapter-marker: #ab7a6c;
+  --chapter-wash: rgba(154, 92, 72, 0.08);
+  --chapter-panel-top: #9e6959;
+  --chapter-panel-bottom: #7c4e40;
+}
+
 [data-chapter='ciberseguridad'] {
   --chapter-accent: #b7846e;
   --chapter-marker: #b39989;

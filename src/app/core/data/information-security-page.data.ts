@@ -3,7 +3,7 @@ import { SectionPageData } from '../models/site-page.model';
 export const informationSecurityPage: SectionPageData = {
   id: 'seguridad-informacion',
   route: '/seguridad-informacion',
-  index: '03',
+  index: '04',
   title: 'Seguridad de la información',
   subtitle: 'Eje Normativo',
   promise:
