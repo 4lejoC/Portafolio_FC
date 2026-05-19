@@ -17,7 +17,7 @@ export class SectionPageFrameComponent {
   readonly page = input.required<SectionPageData>();
   readonly navigationItems = input.required<NavigationItem[]>();
 
-  readonly chapterVisualSrc = computed(() => `/report-visuals/${this.page().id}.png`);
+  readonly chapterVisualSrc = computed(() => `report-visuals/${this.page().id}.png`);
   readonly chapterVisualAlt = computed(
     () => `Visual comercial del eje de ${this.page().title} para el portafolio de PRO3`
   );

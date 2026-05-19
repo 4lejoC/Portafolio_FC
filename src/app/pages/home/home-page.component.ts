@@ -17,7 +17,7 @@ export class HomePageComponent {
   protected readonly page = homePage;
   protected readonly navigationItems = navigationItems;
   protected readonly heroPrimaryHref = '#ejes';
-  protected readonly coverVisualSrc = '/report-visuals/portada.png';
+  protected readonly coverVisualSrc = 'report-visuals/portada.png';
   protected readonly coverVisualAlt =
     'Escena comercial de consultoría y planificación para el portafolio de servicios de PRO3';
 }
